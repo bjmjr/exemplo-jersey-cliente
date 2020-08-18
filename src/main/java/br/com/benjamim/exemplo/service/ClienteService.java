@@ -10,6 +10,7 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.time.LocalDate;
 import java.util.List;
 
 public class ClienteService {
@@ -35,6 +36,7 @@ public class ClienteService {
         novoCliente.setCpf("16766350091");
         novoCliente.setNome("Valxa Xadeuba Kilha");
         novoCliente.setEndereco("Estrada Principal, s/n");
+        novoCliente.setDataNascimento(LocalDate.of(1990, 10,10));
 
         Response response = webTarget.path(RESOURCE).request().post(Entity.entity(novoCliente, MediaType.APPLICATION_JSON_TYPE));
 
